@@ -15,7 +15,9 @@
       <td><?php echo $partes[0]  ?> </td>
       <td><?php echo $partes[1]  ?> </td>
       <td><?php echo $partes[2]  ?> </td>
-      <td> <a href="/excluir?id=<?php echo $posicao  ?>"> Excluir </a> </td>     
+      <td> <a href="/excluir?id=<?php echo $posicao  ?>"> Excluir </a> /
+      <a href="/editar?id=<?php echo $posicao  ?>"> Editar </a>
+     </td>     
     </tr>
 
     <?php }  ?>

@@ -34,8 +34,7 @@ function cadastro(){
 
 
 function excluir () {
-    $id = $_GET['id'];
-    
+    $id = $_GET['id'];    
     $contatos = file('dados/dados.csv');
     unset($contatos[$id]);
     unlink('dados/dados.csv');
@@ -44,5 +43,31 @@ function excluir () {
         fwrite($arquivo, $cadaContato);
     };
     fclose($arquivo);
+  
+};
+
+function editar () {
+    $id = $_GET['id'];    
+    $contatos = file('dados/dados.csv');
+    
+    if ($_POST) {
+        $name = $_POST['nome'];
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+
+        unlink('dados/dados.csv');
+        $contatos[$id] = "{$name};{$email};{$tel}".PHP_EOL;
+
+        $arquivo = fopen('dados/dados.csv', 'a+');
+        foreach ($contatos as $contato) {
+            fwrite($arquivo, $contato);
+        };
+        fclose($arquivo);
+
+        
+    };
+
+    $dados = explode(';', $contatos[$id]);
+    include 'view/editar.php';
   
 };

@@ -40,6 +40,12 @@ if($url[0] === '/listar'){
     excluir();
  }
 
+ 
+ if($url[0] === '/editar'){
+
+   editar();
+}
+
 ?>
     
 </body>
