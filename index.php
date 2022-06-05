@@ -9,29 +9,35 @@
 </head>
 <body>
 
-<?php $url = $_SERVER["REQUEST_URI"];
+<?php 
+$url = explode('?', $_SERVER['REQUEST_URI']);
 include ("./acoes.php");
 
 include("./view/menu.php");
 
 
-if($url === '/'){
+if($url[0] === '/'){
 
   home();
 }
 
-if($url === '/login'){
+if($url[0] === '/login'){
 
    login();
 }
 
-if($url === '/listar'){
+if($url[0] === '/listar'){
 
     listar();
  }
- if($url === '/cadastro'){
+ if($url[0] === '/cadastro'){
 
     cadastro();
+ }
+
+ if($url[0] === '/excluir'){
+
+    excluir();
  }
 
 ?>

@@ -31,3 +31,18 @@ function cadastro(){
     include("./view/cadastro.php");
 
 }
+
+
+function excluir () {
+    $id = $_GET['id'];
+    
+    $contatos = file('dados/dados.csv');
+    unset($contatos[$id]);
+    unlink('dados/dados.csv');
+    $arquivo = fopen('dados/dados.csv', 'a+');
+    foreach ($contatos as $cadaContato) {
+        fwrite($arquivo, $cadaContato);
+    };
+    fclose($arquivo);
+  
+};
