@@ -23,7 +23,14 @@ if($url === '/'){
 if($url === '/login'){
 
    login();
-} ?>
+}
+
+if($url === '/listar'){
+
+    listar();
+ }
+
+?>
     
 </body>
 </html>
