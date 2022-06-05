@@ -16,6 +16,13 @@ function listar(){
 }
 
 
+function naoexiste(){
+   
+    include("./view/naoexiste.php");
+
+}
+
+
 function cadastro(){
     if($_POST){
         $nome = $_POST["nome"];
@@ -25,6 +32,8 @@ function cadastro(){
         $arquivo = fopen('dados/dados.csv','a+');
         fwrite ($arquivo, "{$nome};{$email};{$tel}".PHP_EOL);
         fclose ($arquivo);
+        $mensagem = "Cadastrado com sucesso";
+        include("./view/mensagem.php");
        
     }
   
@@ -43,6 +52,8 @@ function excluir () {
         fwrite($arquivo, $cadaContato);
     };
     fclose($arquivo);
+    $mensagem = "Excluido com sucesso";
+    include("./view/mensagem.php");
   
 };
 
@@ -63,6 +74,9 @@ function editar () {
             fwrite($arquivo, $contato);
         };
         fclose($arquivo);
+
+        $mensagem = "Editado com sucesso";
+        include("./view/mensagem.php");
 
         
     };

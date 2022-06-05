@@ -13,37 +13,50 @@
 $url = explode('?', $_SERVER['REQUEST_URI']);
 include ("./acoes.php");
 
-include("./view/menu.php");
+?>
 
+<div class="container p-2 m-2">
+<?php 
+
+include("./view/menu.php");
+?>
+</div>
+
+
+<?php 
 
 if($url[0] === '/'){
 
   home();
+  
 }
 
-if($url[0] === '/login'){
+elseif($url[0] === '/login'){
 
    login();
 }
 
-if($url[0] === '/listar'){
+elseif($url[0] === '/listar'){
 
     listar();
  }
- if($url[0] === '/cadastro'){
+ elseif($url[0] === '/cadastro'){
 
     cadastro();
  }
 
- if($url[0] === '/excluir'){
+ elseif($url[0] === '/excluir'){
 
     excluir();
  }
 
  
- if($url[0] === '/editar'){
+ elseif($url[0] === '/editar'){
 
    editar();
+}
+else{
+ naoexiste();
 }
 
 ?>

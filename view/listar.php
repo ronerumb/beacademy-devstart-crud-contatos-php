@@ -1,3 +1,4 @@
+<button class="btn btn-outline-success p-1 m-4"><a href="/cadastro" >Cadastrar um novo contato</a></button>
 <table class="table container">
   <thead>
     <tr>
