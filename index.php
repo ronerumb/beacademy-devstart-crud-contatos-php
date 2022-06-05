@@ -29,6 +29,10 @@ if($url === '/listar'){
 
     listar();
  }
+ if($url === '/cadastro'){
+
+    cadastro();
+ }
 
 ?>
     

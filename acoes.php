@@ -14,3 +14,20 @@ function listar(){
     include("./view/listar.php");
 
 }
+
+
+function cadastro(){
+    if($_POST){
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $tel = $_POST["tel"];
+
+        $arquivo = fopen('dados/dados.csv','a+');
+        fwrite ($arquivo, "{$nome};{$email};{$tel}".PHP_EOL);
+        fclose ($arquivo);
+       
+    }
+  
+    include("./view/cadastro.php");
+
+}
