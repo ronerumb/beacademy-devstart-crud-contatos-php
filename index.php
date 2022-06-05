@@ -10,17 +10,19 @@
 <body>
 
 <?php $url = $_SERVER["REQUEST_URI"];
+include ("./acoes.php");
 
 include("./view/menu.php");
 
+
 if($url === '/'){
 
-   include("./view/home.php");
+  home();
 }
 
-if($url === '/cadastro'){
+if($url === '/login'){
 
-    echo "tchau";
+   login();
 } ?>
     
 </body>
